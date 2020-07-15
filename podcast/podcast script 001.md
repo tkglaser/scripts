@@ -44,6 +44,24 @@
   * Use an external IDP like Azure Active Directory B2C and OpenID Connect
   * Database: Use NoSql like DynamoDB or CosmosDB (no scaling limits like SQL)
   * Typically the SPA will access the NoSql cluster DIRECTLY using a resource token (explain)
+  * This means all the API needs to do is the token exchange
 
 * How would one implement this in Azure for example?
+  * Host the SPA directly out of Azure Storage
+  * Connect Azure CDN for speed and HTTPS
+  * Use Azure Active Directory B2C (other IDPs are available)
+  * Use CosmosDB for data storage
+  * Use Azure API Management (proxy) to offload authentication
+  * Use Azure App Service to host the API (could use Azure Functions)
+    * Secure using a certificate, or (cheaper) basic Authentication with a long secret
+  * Use Azure Key Vault to store secrets
+
 * How much would it cost?
+  * Dev hosting
+    * Free tiers for CosmosDB, App Service, API Management, AD B2C (some have the first N interactions free)
+    * £0.77 per month
+  * Prod with 100,000 active users
+    * No more free tiers because we want SLAs
+    * £367.07 per month
+    * This means you need to earn roughly £0.004 per user to cover the hosting costs
+
