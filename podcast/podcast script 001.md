@@ -26,7 +26,7 @@ This is the first episode of thomas' and Nosqlgeek's tech podcast. We are starti
 |Example Application|Let's get started|So let's get started. Why don't we start with an application example? Any idea what could be discussed?|David|30s|
 ||Requirements ToDo App|Tasks can be created/deleted/ticked off; Accessible via the web; Login needed (aut); Non-functional: minimum hosting costs, fully secure, good performance, no scaling limits (up to millions of users)|Thomas|1m|
 |Past Architecture|Question|So how would you have architected such an application in the pre-Cloud era?|David|30s|
-||Answer|SQL-database; Server-side code like ASP/MVC; Login: Hashed password / ASP Identity; Scaling: Monolithic approach, so need to scale almost the entire stack together|Thomas|7m|
+||Answer|SQL-database; Server-side code like ASP/MVC; Login: Hashed password / ASP Identity; Scaling: Monolithic approach, so need to scale almost the entire stack together; (Assess against PASS ME perf/avail/sec/scal/maint/exten)|Thomas|7m|
 ||Comment|I see, we have to repeat that you are more a .NET guy. I used to develop more Java code. There we would have used e.g., Java Server Pages or MVC frameworks like Struts (just in case that you don't know what ASP is.|David|1m|
 |Today's Architecture|Question|So how did it change? How does it look like today and why where specific decisions made?|David|30s|
 ||Answer|This is a good case for an SPA, for example Angular; If you build a SPA, you need an API, we'll come to that; Use an external IDP like Azure Active Directory B2C and OpenID Connect; Database: Use NoSql like DynamoDB, CosmosDB or Redis; Typically the SPA will access the NoSql cluster DIRECTLY using a resource token (explain); This means all the API needs to do is the token exchange|Thomas|10m|
@@ -38,5 +38,9 @@ This is the first episode of thomas' and Nosqlgeek's tech podcast. We are starti
 ||Answer for Dev|Free tiers for CosmosDB, App Service, API Management, AD B2C (some have the first N interactions free);£0.77 per month|Thomas|2m|
 ||Answer for Prod|Prod with 100,000 active users: No more free tiers because we want SLAs; £367.07 per month; This means you need to earn roughly £0.004 per user to cover the hosting costs|Thomas|5m|
 ||Follow-up question|Man, those are quite concrete numbers. Do you actually host such an app or how did you calculate them?|David|30s|
-||Answer|Thomas to give the answer|Thomas|1m|
-|||||**46m**|
+||Answer|I have a similar app; A calorie counter that works with the same principle; If I find time and there is interest, I'd like to build this ToDo app out end to end and record tutorials on how to do it. What I have used to get to these numbers is the Azure Calculator with some assumptions (don't guess your traffic). The Calorie App is only used by me and costs me about £0.01 per month|Thomas|2m|
+||Question|What is next for you?|David|30s|
+||Answer| Recently got certified as Azure Architect; Now working on AWS Certification; Took some time off with the corona thing, now looking to get back into consulting. |Thomas|2m|
+||Question| How about you, what's next for you?|Thomas|30s|
+||Answer| David to answer |David|2min|
+|||||**52m**|
